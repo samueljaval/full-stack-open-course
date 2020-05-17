@@ -3,6 +3,7 @@ browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
 note over server:
 server executes javascript code to push the new note on the notes list. The json 
 is now updated
+end note
 
 server-->browser: URL-redirect	
 browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
