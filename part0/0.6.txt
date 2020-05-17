@@ -1,0 +1,11 @@
+note over browser:
+js code prevents the event default handling of form submit. There will be no 
+redirects after the submission.
+When user creates note, the new note is added to notes in the browser page
+end note
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note.spa
+
+note over server:
+server includes the new note in the json
+end note 
