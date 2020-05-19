@@ -36,16 +36,14 @@ const App = (props) => {
     const [selected, setSelected] = useState(0)
     const initial = new Uint8Array(props.anecdotes.length)
     const [votes, setVotes] = useState(initial)
-    const rand = random()
     const best = Math.max(...votes)
-    console.log(votes)
     return (
         <div>
         <h1>Anecdote of the day</h1>
         <ShowAnecdote arr1={props.anecdotes} i={selected} arr2={votes}/>
         <div>
             <Button onClick = {() => add_vote(votes, selected, setVotes)} text = "vote"/>
-            <Button onClick = {() => setSelected(rand)} text = "next anecdote"/>
+            <Button onClick = {() => setSelected(random())} text = "next anecdote"/>
         </div>
         <h1>Anecdote with the most votes</h1>
         <ShowAnecdote arr1={props.anecdotes} i={votes.indexOf(best)} arr2={votes}/>

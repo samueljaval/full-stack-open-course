@@ -24,7 +24,6 @@ const Content = (props) => {
 }
 
 const Total = (props) => {
-    console.log(props)
     return (
         <>
             <p>Number of exercices {props.parts[0].exercises +
