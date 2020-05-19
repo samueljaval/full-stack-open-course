@@ -32,7 +32,6 @@ const add_vote = (votes, index, setVotes) => {
 }
 
 
-
 const App = (props) => {
     const [selected, setSelected] = useState(0)
     const initial = new Uint8Array(props.anecdotes.length)
