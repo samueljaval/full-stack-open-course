@@ -1,5 +1,7 @@
 const initial = ""
 
+var timeoutId
+
 const notificationReducer = (state = initial, action) => {
     // console.log('state now: ', action.data)
     switch (action.type){
@@ -16,11 +18,12 @@ const notificationReducer = (state = initial, action) => {
 
 export const setNotification = (text, time) => {
     return async dispatch => {
+        clearTimeout(timeoutId)
         dispatch({
             type : "VOTED",
             data : {message : text}
         })
-        setTimeout(()=>dispatch({type:"RESET"}), time)
+        timeoutId = setTimeout(()=>dispatch({type:"RESET"}), time)
     }
 }
 
