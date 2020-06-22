@@ -14,18 +14,13 @@ const notificationReducer = (state = initial, action) => {
     }
 }
 
-export const voted = (anecdote) => {
-    return {
-        type : "VOTED",
-        data : {message : `one vote was added in favour of "${anecdote}"`}
-    }
-}
-
-
-export const added = (anecdote) => {
-    return {
-        type : "ADDED",
-        data : {message : `${anecdote} was added to the list`}
+export const setNotification = (text, time) => {
+    return async dispatch => {
+        dispatch({
+            type : "VOTED",
+            data : {message : text}
+        })
+        setTimeout(()=>dispatch({type:"RESET"}), time)
     }
 }
 
